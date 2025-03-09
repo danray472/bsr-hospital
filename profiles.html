@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team - BSR Hospital</title>
+  <link rel="stylesheet" href="profiles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css">
+   <!-- Google Material Icons -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link rel="icon" type="image/png" href="assets/favicon.ico">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <!-- Top Social Links -->
+    <div class="top-social">
+        <ul>
+            <li><a href="http://facebook.com/BSRHospitalKenya" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="http://twitter.com/BsrHospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="http://instagram.com/bsr_hospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="http://youtube.com/watch?v=_5xBS86dPyI" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+        
+          
+    </div>
+    
+    <!-- Main Navigation -->
+    <div class="nav-container">
+      <div href="index.html" class="logo">
+        <a href="index.html"><img src="assets/BSR-Hospital-logo.png" alt="Hospital Logo"></a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="appointment.html">Book Appointment</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="profiles.html">Our Stuff</a></li>
+          <li><a href="updates.html">News and Updates</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+        </ul>
+      </nav>
+      <!-- Mobile Menu Icon -->
+      <div class="mobile-menu">
+        <a href="index.html"><span class="material-icons">menu</span></a>
+      </div>
+    </div>
+    <!-- Mobile Navigation Links -->
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="appointment.html">Book Appointment</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="profiles.html">Our Stuff</a></li>
+            <li><a href="updates.html">News and Updates</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+          </ul>
+    </div>
+
+    <script>
+      document.querySelector('.mobile-menu').addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        let mobileNav = document.querySelector('.mobile-nav');
+        let menuIcon = document.querySelector('.mobile-menu span');
+    
+        // Toggle active class
+        if (mobileNav.classList.contains('active')) {
+          mobileNav.classList.remove('active');
+          menuIcon.textContent = 'menu'; // Change icon back to "menu"
+        } else {
+          mobileNav.classList.add('active');
+          menuIcon.textContent = 'close'; // Change icon to "close"
+        }
+      });
+    
+      // Hide mobile menu when a link is clicked and reset the icon
+      document.querySelectorAll('.mobile-nav a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          document.querySelector('.mobile-nav').classList.remove('active');
+          document.querySelector('.mobile-menu span').textContent = 'menu';
+        });
+      });
+
+      //Mobile Menu Toggle Script 
+        document.querySelector('.mobile-menu').addEventListener('click', function(e) {
+       e.preventDefault();
+       var mobileNav = document.querySelector('.mobile-nav');
+       mobileNav.style.display = (mobileNav.style.display === 'block') ? 'none' : 'block';
+     });
+     
+     // Hide mobile nav when a link is clicked
+     document.querySelectorAll('.mobile-nav a').forEach(function(link) {
+       link.addEventListener('click', function() {
+         document.querySelector('.mobile-nav').style.display = 'none';
+       });
+     });
+
+
+     document.addEventListener("DOMContentLoaded", function () {
+  // Get the current URL path
+  let currentPage = window.location.pathname.split("/").pop(); 
+
+  // Select all navigation links
+  let navLinks = document.querySelectorAll(".main-nav ul li a, .mobile-nav ul li a");
+
+  navLinks.forEach(link => {
+    let linkHref = link.getAttribute("href");
+
+    // Check if the link href matches the current page
+    if (linkHref === currentPage || (currentPage === "" && linkHref === "index.html")) {
+      link.classList.add("active");
+    }
+  });
+});
+
+    </script>
+
+
+    
+    
+  </header>
+
+
+  <div class="header-profiles">
+    <h1>Meet Our Team</h1>
+  </div>
+
+  <section class="team-container">
+    <!-- Team Member 1 -->
+    <div class="team-member">
+      <img src="assets/Dr.-PK-Wanyoike.png" alt="Dr. P. K. Wanyoike">
+      <h2>Dr. P. K. Wanyoike</h2>
+      <p>Chief Neurosurgeon</p>
+      <a href="#" class="read-more" onclick="openModal(
+          'Dr. P. K. Wanyoike', 
+          'Chief Neurosurgeon', 
+          'Experience: 21+ Years<br>Specialty: Advanced neurosurgical procedures<br>Dr. Peter Wanyoike is the Executive Director of BSR Hospital. A Fellow of the College of Surgeons of East, Central, and Southern Africa, he has 21 years of experience and played a key role in disaster management.' 
+        ); return false;">Read More</a>
+    </div>
+
+    <!-- Team Member 2 -->
+    <div class="team-member">
+      <img src="assets/Agnes.png" alt="Agnes Kamau">
+      <h2>Agnes Kamau</h2>
+      <p>Chief Executive Officer</p>
+      <a href="#" class="read-more" onclick="openModal(
+          'Agnes Kamau',
+          'Chief Executive Officer',
+          'Focus: Strategic innovation<br>Agnes drives the vision of BSR Hospital with creative and effective strategies.'
+        ); return false;">Read More</a>
+    </div>
+
+    <!-- Team Member 3 -->
+    <div class="team-member">
+      <img src="assets/sheila-kamau-2.png" alt="Sheilah Wanjiku">
+      <h2>Sheilah Wanjiku</h2>
+      <p>Administration & Operations Manager</p>
+      <a href="#" class="read-more" onclick="openModal(
+          'Sheilah Wanjiku',
+          'Administration & Operations Manager',
+          'Expertise: Operational excellence<br>Sheilah keeps hospital operations running smoothly with efficiency.'
+        ); return false;">Read More</a>
+    </div>
+
+    <!-- Team Member 4 -->
+    <div class="team-member">
+      <img src="assets/sylvia.jpg" alt="Sylvia Njoroge">
+      <h2>Sylvia Njoroge</h2>
+      <p>Chief Operating Officer</p>
+      <a href="#" class="read-more" onclick="openModal(
+          'Sylvia Njoroge',
+          'Chief Operating Officer',
+          'Experience: Extensive clinical care<br>Sylvia is dedicated to providing compassionate patient support.'
+        ); return false;">Read More</a>
+    </div>
+
+    <!-- Team Member 5 -->
+    <div class="team-member">
+      <img src="assets/eric-wanyoike-768x960.png" alt="Dr. Eric Wanyoike">
+      <h2>Dr. Eric Wanyoike</h2>
+      <p>Medical Officer</p>
+      <a href="#" class="read-more" onclick="openModal(
+          'Dr. Eric Wanyoike',
+          'Medical Officer',
+          'Experience: 10+ Years in Clinical Care<br>Dr. Eric is committed to delivering high-quality patient care.'
+        ); return false;">Read More</a>
+    </div>
+
+    <!-- Team Member 6 -->
+    <div class="team-member">
+      <img src="assets/dr.png" alt="Fridah Wachira">
+      <h2>Fridah Wachira</h2>
+      <p>Medical Officer</p>
+      <a href="#" class="read-more" onclick="openModal(
+          'Fridah Wachira',
+          'Medical Officer',
+          'Dr. Fridah is renowned for her compassionate approach and commitment to high-quality patient care.'
+        ); return false;">Read More</a>
+    </div>
+
+    <!-- Team Member 7 -->
+    <div class="team-member">
+      <img src="assets/Frederick-Odoyo-Orwa-768x960.png" alt="Fredrick Odoyo">
+      <h2>Fredrick Odoyo</h2>
+      <p>Chief Nurse</p>
+      <a href="#" class="read-more" onclick="openModal(
+          'Fredrick Odoyo',
+          'Chief Nurse',
+          'Fredrick oversees nursing operations ensuring excellent patient care and safety.'
+        ); return false;">Read More</a>
+    </div>
+
+    <!-- Team Member 8 -->
+    <div class="team-member">
+      <img src="assets/alex-wahome-768x960.png" alt="Alex Wahome">
+      <h2>Alex Wahome</h2>
+      <p>Procurement Officer</p>
+      <a href="#" class="read-more" onclick="openModal(
+          'Alex Wahome',
+          'Procurement Officer',
+          'Alex manages hospital procurement ensuring efficiency and cost-effectiveness.'
+        ); return false;">Read More</a>
+    </div>
+
+    <!-- Team Member 9 -->
+    <div class="team-member">
+      <img src="assets/Newton-Mutembei-768x960.png" alt="Newton Mutembei">
+      <h2>Newton Mutembei</h2>
+      <p>Laboratory Technologist</p>
+      <a href="#" class="read-more" onclick="openModal(
+          'Newton Mutembei',
+          'Laboratory Technologist',
+          'Expertise: Diagnostic accuracy<br>Newton ensures precision in every test conducted.'
+        ); return false;">Read More</a>
+    </div>
+
+    <!-- Team Member 10 -->
+    <div class="team-member">
+      <img src="assets/John-Otila-Mbuya-768x960.png" alt="John Otila">
+      <h2>John Otila</h2>
+      <p>House Keeping</p>
+      <a href="#" class="read-more" onclick="openModal(
+          'John Otila',
+          'House Keeping',
+          'John is dedicated to maintaining a clean and safe environment at the hospital.'
+        ); return false;">Read More</a>
+    </div>
+  </section>
+
+  <!-- Modal Structure -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalName"></h2>
+      <p id="modalRole"></p>
+      <p id="modalDetails"></p>
+    </div>
+  </div>
+
+  <!-- Modal Functionality Script -->
+  <script>
+    function openModal(name, role, details) {
+      document.getElementById('modalName').innerText = name;
+      document.getElementById('modalRole').innerText = role;
+      document.getElementById('modalDetails').innerHTML = details;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // Close modal when clicking outside modal content
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+     <!-- Footer Section -->
+<footer>
+  <div class="footer-top">
+    <!-- Quick Links -->
+    <div class="quick-links">
+      <h4><i class="fas fa-link"></i> Quick Links</h4>
+      <ul>
+        <li><a href="appointment.html">Book Appointment</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="profiles.html">Our Stuff</a></li>
+        <li><a href="updates.html">News and Updates</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- About Us Summary -->
+    <div class="footer-about">
+      <h4><i class="fas fa-hospital"></i> About Us</h4>
+      <p>BSR Hospital is a leading provider of neurosurgery and rehabilitation services located in Kamakis, Eastern Bypass.</p>
+    </div>
+
+    <!-- Location -->
+    <div class="footer-location">
+      <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
+      <p>Kamakis, Eastern Bypass, Kiambu County, Kenya</p>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h4><i class="fas fa-phone"></i> Contact Us</h4>
+      <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bsrnairobi@gmail.com" target="_blank">bsrnairobi@gmail.com</a></p>
+      <p>Phone: <a href="tel:+254710277277">+254 710 277 277 | +254 738 277 277</a></p>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="footer-social">
+      <h4><i class="fas fa-share-alt"></i> Follow Us</h4>
+      <ul>
+        <li><a href="http://facebook.com/BSRHospitalKenya" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="http://twitter.com/BsrHospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="http://instagram.com/bsr_hospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="http://youtube.com/watch?v=_5xBS86dPyI" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- Our Partners Section -->
+<div class="our-partners">
+  <h4>Our Partners</h4>
+  <div class="partner-slider">
+    <ul>
+      <!-- Original list of partners -->
+      <li><img src="assets/partner1.png" alt="Partner 1"></li>
+      <li><img src="assets/partner2.png" alt="Partner 2"></li>
+      <li><img src="assets/partner3.png" alt="Partner 3"></li>
+      <li><img src="assets/partner4.png" alt="Partner 4"></li>
+      <li><img src="assets/partner5.png" alt="Partner 5"></li>
+      <li><img src="assets/partner6.png" alt="Partner 6"></li>
+      <li><img src="assets/partner7.png" alt="Partner 7"></li>
+      <li><img src="assets/partner8.png" alt="Partner 8"></li>
+      <li><img src="assets/partner9.png" alt="Partner 9"></li>
+      <li><img src="assets/partner10.png" alt="Partner 10"></li>
+      <li><img src="assets/partner11.png" alt="Partner 11"></li>
+      <!-- Duplicate the list for seamless looping -->
+      <li><img src="assets/partner1.png" alt="Partner 1"></li>
+      <li><img src="assets/partner2.png" alt="Partner 2"></li>
+      <li><img src="assets/partner3.png" alt="Partner 3"></li>
+      <li><img src="assets/partner4.png" alt="Partner 4"></li>
+      <li><img src="assets/partner5.png" alt="Partner 5"></li>
+      <li><img src="assets/partner6.png" alt="Partner 6"></li>
+      <li><img src="assets/partner7.png" alt="Partner 7"></li>
+      <li><img src="assets/partner8.png" alt="Partner 8"></li>
+      <li><img src="assets/partner9.png" alt="Partner 9"></li>
+      <li><img src="assets/partner10.png" alt="Partner 10"></li>
+      <li><img src="assets/partner11.png" alt="Partner 11"></li>
+    </ul>
+  </div>
+</div>
+
+
+
+  <!-- Back to Top Button inside the footer -->
+<div class="back-to-top-container">
+  <button id="backToTop" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</div>
+
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 BSR Hospital. All Rights Reserved.</p>
+  </div>
+<script>
+  // Show "Back to Top" when scrolling
+window.addEventListener("scroll", function () {
+  let backToTop = document.getElementById("backToTop");
+  if (window.scrollY > 300) {
+    backToTop.style.display = "block";
+  } else {
+    backToTop.style.display = "none";
+  }
+});
+
+
+// Scroll to top when button is clicked
+document.getElementById("backToTop").addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
+</footer>
+     
+       
+</body>
+</html>

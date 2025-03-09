@@ -1,0 +1,129 @@
+/* General Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Updates Container */
+.header-updates {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Center the Navigation */
+.header-updates nav {
+    width: 100%; /* Take full width */
+    display: flex;
+    justify-content: center; /* Center nav links */
+    margin-top: 10px;
+}
+
+.header-updates nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    justify-content: center; /* Center items */
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    max-width: 90%; /* Ensures it doesn't take full width on mobile */
+}
+
+/* Navigation Links */
+.header-updates nav ul li {
+    flex: 1 1 auto; /* Allows flexible button sizing */
+    min-width: 120px; /* Prevents buttons from becoming too small */
+    text-align: center; /* Centers text */
+}
+
+.header-updates nav ul li a {
+    display: block;
+    width: 100%; /* Makes buttons uniform */
+    padding: 10px;
+    background-color: #ffffff; /* Button background */
+    color: #0168B4; /* Button text color */
+    border: 1px solid #0168B4;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    text-decoration: none;
+    text-align: center; /* Ensures text is centered */
+    white-space: nowrap; /* Prevents text from breaking into two lines */
+}
+
+/* Hover Effect */
+.header-updates nav ul li a:hover {
+    background-color: #0168B4;
+    color: #ffffff;
+}
+
+/* Active Link */
+.header-updates nav ul li a.active {
+    background-color: #014f87;
+    color: #ffffff;
+    border-color: #014f87;
+}
+
+/* Responsive Fix for Mobile */
+@media screen and (max-width: 600px) {
+    .header-updates nav ul {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .header-updates nav ul li {
+        width: 100%; /* Ensures buttons take full width */
+    }
+
+    .header-updates nav ul li a {
+        width: 100%; /* Ensures full button width */
+    }
+    .card{
+        width: 100%;
+    }
+}
+
+
+  
+
+.section {
+    padding: 40px;
+    text-align: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: #005f73;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #0a9396;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.card a:hover {
+    background: #94d2bd;
+}
+

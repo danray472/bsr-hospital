@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>Hospital Home</title>
+  <link rel="stylesheet" href="home.css">
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/favicon.ico">
+
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <!-- Top Social Links -->
+    <div class="top-social">
+        <ul>
+            <li><a href="http://facebook.com/BSRHospitalKenya" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="http://twitter.com/BsrHospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="http://instagram.com/bsr_hospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="http://youtube.com/watch?v=_5xBS86dPyI" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+        
+          
+    </div>
+    
+    <!-- Main Navigation -->
+    <div class="nav-container">
+      <div href="index.html" class="logo">
+        <a href=""><img src="assets/BSR-Hospital-logo.png" alt="Hospital Logo"></a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="appointment.html">Book Appointment</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="profiles.html">Our Stuff</a></li>
+          <li><a href="updates.html">News and Updates</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+        </ul>
+      </nav>
+      <!-- Mobile Menu Icon -->
+      <div class="mobile-menu">
+        <a href="#"><span class="material-icons">menu</span></a>
+      </div>
+    </div>
+    <!-- Mobile Navigation Links -->
+    <div class="mobile-nav">
+      <ul>
+        <li><a href="appointment.html">Book Appointment</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="profiles.html">Our Stuff</a></li>
+        <li><a href="updates.html">News and Updates</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <script>
+      document.querySelector('.mobile-menu').addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        let mobileNav = document.querySelector('.mobile-nav');
+        let menuIcon = document.querySelector('.mobile-menu span');
+    
+        // Toggle active class
+        if (mobileNav.classList.contains('active')) {
+          mobileNav.classList.remove('active');
+          menuIcon.textContent = 'menu'; // Change icon back to "menu"
+        } else {
+          mobileNav.classList.add('active');
+          menuIcon.textContent = 'close'; // Change icon to "close"
+        }
+      });
+    
+      // Hide mobile menu when a link is clicked and reset the icon
+      document.querySelectorAll('.mobile-nav a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          document.querySelector('.mobile-nav').classList.remove('active');
+          document.querySelector('.mobile-menu span').textContent = 'menu';
+        });
+      });
+      
+      document.addEventListener("DOMContentLoaded", function () {
+  // Get the current URL path
+  let currentPage = window.location.pathname.split("/").pop(); 
+
+  // Select all navigation links
+  let navLinks = document.querySelectorAll(".main-nav ul li a, .mobile-nav ul li a");
+
+  navLinks.forEach(link => {
+    let linkHref = link.getAttribute("href");
+
+    // Check if the link href matches the current page
+    if (linkHref === currentPage || (currentPage === "" && linkHref === "index.html")) {
+      link.classList.add("active");
+    }
+  });
+});
+
+    </script>
+    
+    
+  </header>
+
+  <!-- Main Content Placeholder -->
+  <main>
+    <!-- Add your page content here -->
+    <section class="hero">
+        
+        
+            <!-- Slideshow Images -->
+            <img src="assets/slide1.jpg" alt="Slide 1">
+            <img src="assets/slide2.jpeg" alt="Slide 2">
+            <img src="assets/slide3.jpeg" alt="Slide 3">
+            <img src="assets/slide4.jpeg" alt="Slide 4">
+        
+            <!-- Text Overlays (One for Each Slide) -->
+            <div class="slide-text">VISIT US<br>Ruiru, Kamakis, Eastern Bypass, Kiambu.</div>
+            <div class="slide-text">Self Contained Ward<br></div>
+            <div class="slide-text">CONTACT US: +254 710 277 277 | +254 738 277 277 <br> EMAIL US: bsrnairobi@gmail.com</div>
+            <div class="slide-text">BSR Hospital</div>
+       
+        
+      
+        
+            <script>
+                let slides = document.querySelectorAll(".hero img");
+                let texts = document.querySelectorAll(".slide-text");
+                let currentSlide = 0;
+              
+                function changeSlide() {
+                  slides[currentSlide].style.opacity = 0; // Hide current slide
+                  texts[currentSlide].style.opacity = 0;  // Hide current text
+              
+                  currentSlide = (currentSlide + 1) % slides.length; // Move to next slide
+              
+                  slides[currentSlide].style.opacity = 1; // Show next slide
+                  texts[currentSlide].style.opacity = 1;  // Show corresponding text
+                }
+              
+                setInterval(changeSlide, 5000); // Change slide every 4 seconds
+              </script>
+              
+          
+      </section>
+
+      <section class="about-us-summary">
+        <div class="container">
+          <div class="summary-content">
+            <div class="summary-text">
+              <h2>About Us</h2>
+              <p>
+                BSR Hospital is a provider of acute and specialized Neurosurgery care and rehabilitation services.
+              </p>
+              <p>
+                Located in a serene environment of Kamakis, Ruiru, Eastern Bypass in Kiambu County, the facility is easily accessible by public and private transport along the key artery of Thika Superhighway.
+              </p>
+              <a href="about us/about-us.html" class="btn">Read More</a>
+            </div>
+            <div class="summary-image">
+              <img src="assets/about-sammary.jpeg" alt="About Us">
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="services-summary">
+        <div class="container">
+          <h2>Our Services</h2>
+          <div class="services-grid">
+            <!-- Service Card 1 -->
+            <div class="service-card">
+              <img src="assets/rehab-1536x491.jpg" alt="Physiotherapy Services">
+              <div class="card-content">
+                <h3>Physiotherapy</h3>
+                <p>Functional mobility training and pain management to restore strength and flexibility.</p>
+              </div>
+            </div>
+            <!-- Service Card 2 -->
+            <div class="service-card">
+              <img src="assets/rehab2-1536x491.jpg" alt="Occupational Therapy">
+              <div class="card-content">
+                <h3>Occupational Therapy</h3>
+                <p>Re-training daily living activities and improving coordination for enhanced independence.</p>
+              </div>
+            </div>
+            <!-- Service Card 3 -->
+            <div class="service-card">
+              <img src="assets/rehab3-1536x491 (1).jpg" alt="Inpatient Services">
+              <div class="card-content">
+                <h3>Inpatient Services</h3>
+                <p>Comprehensive care including surgery, post-operative recovery, and rehabilitation under one roof.</p>
+              </div>
+            </div>
+          </div>
+          <div class="view-more">
+            <a href="services.html" class="btn">View More Services</a>
+          </div>
+        </div>
+      </section>
+      
+      
+  </main>
+
+  <!-- Footer Section -->
+<footer>
+  <div class="footer-top">
+    <!-- Quick Links -->
+    <div class="quick-links">
+      <h4><i class="fas fa-link"></i> Quick Links</h4>
+      <ul>
+        <li><a href="appointment.html">Book Appointment</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="profiles.html">Our Stuff</a></li>
+        <li><a href="updates.html">News and Updates</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- About Us Summary -->
+    <div class="footer-about">
+      <h4><i class="fas fa-hospital"></i> About Us</h4>
+      <p>BSR Hospital is a leading provider of neurosurgery and rehabilitation services located in Kamakis, Eastern Bypass.</p>
+    </div>
+
+    <!-- Location -->
+    <div class="footer-location">
+      <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
+      <p>Kamakis, Eastern Bypass, Kiambu County, Kenya</p>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h4><i class="fas fa-phone"></i> Contact Us</h4>
+      <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bsrnairobi@gmail.com" target="_blank">bsrnairobi@gmail.com</a></p>
+      <p>Phone: <a href="tel:+254710277277">+254 710 277 277 | +254 738 277 277</a></p>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="footer-social">
+      <h4><i class="fas fa-share-alt"></i> Follow Us</h4>
+      <ul>
+        <li><a href="http://facebook.com/BSRHospitalKenya" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="http://twitter.com/BsrHospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="http://instagram.com/bsr_hospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="http://youtube.com/watch?v=_5xBS86dPyI" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
+      </ul>
+    </div>
+  </div>
+
+<!-- Our Partners Section -->
+<div class="our-partners">
+  <h4>Our Partners</h4>
+  <div class="partner-slider">
+    <ul>
+      <!-- Original list of partners -->
+      <li><img src="assets/partner1.png" alt="Partner 1"></li>
+      <li><img src="assets/partner2.png" alt="Partner 2"></li>
+      <li><img src="assets/partner3.png" alt="Partner 3"></li>
+      <li><img src="assets/partner4.png" alt="Partner 4"></li>
+      <li><img src="assets/partner5.png" alt="Partner 5"></li>
+      <li><img src="assets/partner6.png" alt="Partner 6"></li>
+      <li><img src="assets/partner7.png" alt="Partner 7"></li>
+      <li><img src="assets/partner8.png" alt="Partner 8"></li>
+      <li><img src="assets/partner9.png" alt="Partner 9"></li>
+      <li><img src="assets/partner10.png" alt="Partner 10"></li>
+      <li><img src="assets/partner11.png" alt="Partner 11"></li>
+      <!-- Duplicate the list for seamless looping -->
+      <li><img src="assets/partner1.png" alt="Partner 1"></li>
+      <li><img src="assets/partner2.png" alt="Partner 2"></li>
+      <li><img src="assets/partner3.png" alt="Partner 3"></li>
+      <li><img src="assets/partner4.png" alt="Partner 4"></li>
+      <li><img src="assets/partner5.png" alt="Partner 5"></li>
+      <li><img src="assets/partner6.png" alt="Partner 6"></li>
+      <li><img src="assets/partner7.png" alt="Partner 7"></li>
+      <li><img src="assets/partner8.png" alt="Partner 8"></li>
+      <li><img src="assets/partner9.png" alt="Partner 9"></li>
+      <li><img src="assets/partner10.png" alt="Partner 10"></li>
+      <li><img src="assets/partner11.png" alt="Partner 11"></li>
+    </ul>
+  </div>
+</div>
+
+
+
+  <!-- Back to Top Button inside the footer -->
+<div class="back-to-top-container">
+  <button id="backToTop" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</div>
+
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 BSR Hospital. All Rights Reserved.</p>
+  </div>
+<script>
+  // Show "Back to Top" when scrolling
+window.addEventListener("scroll", function () {
+  let backToTop = document.getElementById("backToTop");
+  if (window.scrollY > 300) {
+    backToTop.style.display = "block";
+  } else {
+    backToTop.style.display = "none";
+  }
+});
+
+
+// Scroll to top when button is clicked
+document.getElementById("backToTop").addEventListener("click", function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
+</footer>
+
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+   document.querySelector('.mobile-menu').addEventListener('click', function(e) {
+  e.preventDefault();
+  var mobileNav = document.querySelector('.mobile-nav');
+  mobileNav.style.display = (mobileNav.style.display === 'block') ? 'none' : 'block';
+});
+
+// Hide mobile nav when a link is clicked
+document.querySelectorAll('.mobile-nav a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.querySelector('.mobile-nav').style.display = 'none';
+  });
+});
+
+  </script>
+</body>
+</html>

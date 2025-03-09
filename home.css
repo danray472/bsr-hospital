@@ -1,0 +1,612 @@
+/* =============================================
+   GLOBAL RESETS & BASE STYLES
+============================================= */
+
+/* Reset all margins, paddings, and box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure no horizontal overflow */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Base Font & Background */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Remove default list styles and link underlines */
+ul, li, a {
+  list-style: none;
+  text-decoration: none;
+}
+
+/* =============================================
+   HEADER & TOP SOCIAL STYLES
+============================================= */
+
+/* Top Social Links - fixed at very top */
+.top-social {
+  background-color: #0168B4;
+  height: 18px; /* Reduced height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 0;
+  position: fixed;
+  top: -16px;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+}
+
+.top-social ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 600px;
+  padding: 0;
+}
+
+.top-social ul li {
+  flex: 1;
+  text-align: center;
+}
+
+.top-social ul li a i {
+  font-size: 16px; /* Reduced icon size */
+  color: #fff;
+}
+
+/* Responsive adjustments for top-social */
+@media (max-width: 768px) {
+  .top-social {
+    height: 20px;
+    top: -16px;
+  }
+  .top-social ul li a i {
+    font-size: 15px;
+  }
+
+}
+
+/* Fixed Header with Glassy Effect */
+header {
+  position: fixed;
+  top: 16px; /* Immediately below top-social */
+  left: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 6px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Header Sticky / Scrolled State */
+header.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Navigation Container */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px; /* Reduced padding */
+}
+
+/* Logo */
+.logo img {
+  height: 60px; /* Reduced logo size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+/* Navigation Links */
+.main-nav ul {
+  display: flex;
+  gap: 15px;
+}
+
+.main-nav ul li a {
+  color: #0168B4;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover Effect */
+.main-nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Active Page Link */
+.main-nav ul li a.active,
+.main-nav ul li a:focus {
+  text-decoration: underline;
+  color: #1023b4; /* Gold text for visibility */
+  font-weight: bold;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu a i,
+.mobile-menu a .material-icons {
+  font-size: 28px;
+  color: #0168B4;
+}
+
+/* Mobile Navigation Links */
+.mobile-nav {
+  display: none;
+  background-color: #fff;
+  border-top: 1px solid #0168B4;
+}
+
+.mobile-nav ul {
+  padding: 10px 20px;
+}
+
+.mobile-nav ul li {
+  margin-bottom: 10px;
+}
+
+.mobile-nav ul li a {
+  color: #0168B4;
+  font-weight: bold;
+  padding: 8px 12px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover Effect for Mobile Links */
+.mobile-nav ul li a:hover {
+  background-color: #0168B4;
+  color: white;
+}
+
+/* Active Link in Mobile Nav */
+.mobile-nav ul li a.active {
+  background-color: #014f87;
+  color: #FFD700;
+}
+
+
+/* Adjust body top padding to prevent overlap under fixed header */
+body {
+  padding-top: 62px; /* Adjust based on header & top-social heights */
+}
+
+/* =============================================
+   FOOTER STYLES
+============================================= */
+footer {
+  background-color: #4c8fce;
+  padding: 20px;
+  color: #fff;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+.footer-top > div {
+  flex: 1 1 200px;
+  margin: 10px;
+}
+
+.footer-top h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-top ul {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer-top ul li a i {
+  font-size: 20px;
+  color: #fff;
+}
+
+/* Quick Links */
+.quick-links ul li a {
+  color: white;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+/* Contact Info */
+.contact-info,
+.contact-info h4,
+.contact-info p a {
+  color: white;
+}
+.contact-info p a {
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+/* Our Partners Section */
+.our-partners {
+  margin-top: 20px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+ 
+}
+
+/* Our Partners Section */
+.our-partners {
+  margin-top: 20px;
+  text-align: center;
+  overflow: hidden; /* Prevents overflow */
+  position: relative;
+  padding: 10px 0;
+  
+}
+
+/* Partner Slider Container (Desktop) */
+.partner-slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Animated List for Desktop */
+.partner-slider ul {
+  display: flex;
+  
+  gap: 20px;
+  animation: scrollPartners 15s linear infinite;
+  min-width: 200%; /* Ensures smooth scrolling */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Individual Logo Item (Desktop) */
+.partner-slider ul li {
+  display: flex;
+}
+
+/* Logo Styling (Desktop) */
+.partner-slider ul li img {
+  height: 60px; /* Desktop logo size */
+  width: auto;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+/* Hover Effect (Desktop) */
+.partner-slider ul li img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Keyframes for Continuous Scrolling (Desktop) */
+@keyframes scrollPartners {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile Styles: Disable Animation and List Logos Vertically */
+@media (max-width: 768px) {
+  .partner-slider ul {
+    animation: none;            /* Disable animation */
+    flex-direction: row;     /* List logos vertically */
+    flex-wrap: wrap;
+    
+    gap: 10px;
+    
+    min-width: auto;            /* Remove min-width constraint */
+  }
+  .partner-slider ul li {
+    display: flex;
+    justify-content: center;
+  }
+  .partner-slider ul li img {
+    height: 30px; /* Reduced to 50% of desktop size */
+    border-radius: 5px;
+    width: 50px;
+  }
+}
+
+
+
+
+
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+}
+/* Footer About & Location */
+.footer-about, .footer-location {
+  flex: 1 1 200px;
+  margin: 10px;
+  color: white;
+}
+
+.footer-about p, .footer-location p {
+  font-size: 14px;
+}
+
+/* Back to Top Button - Positioned at Bottom-Right of Footer */
+.back-to-top-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns to the right side */
+  margin-top: 20px;
+}
+
+.back-to-top {
+  background: none;
+  color: #f4f5f6; /* Light color */
+  border: 1px solid #c7dfed;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/* Responsive Footer Adjustments */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .quick-links ul {
+    flex-direction: column;
+    gap: 5px;
+  }
+  header {
+    height: 85px;
+  }
+}
+
+/* =============================================
+   HERO / SLIDESHOW SECTION
+============================================= */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+.hero img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero img:first-child {
+  opacity: 1;
+}
+
+/* Slide Text Overlay */
+.slide-text {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide-text:first-child {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh;
+  }
+  .slide-text {
+    font-size: 1.2rem;
+    width: 80%;
+    padding: 10px;
+  }
+}
+
+/* =============================================
+   ABOUT US SUMMARY SECTION
+============================================= */
+.about-us-summary {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.about-us-summary .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.summary-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.summary-text {
+  flex: 1;
+}
+
+.summary-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0168B4;
+}
+
+.summary-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Button (used in multiple sections) */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0168B4;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #014f87;
+}
+
+.summary-image {
+  flex: 1;
+  text-align: center;
+}
+
+.summary-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .summary-content {
+    flex-direction: column;
+  }
+  .summary-text, .summary-image {
+    width: 100%;
+  }
+}
+
+/* =============================================
+   SERVICES SUMMARY SECTION
+============================================= */
+.services-summary {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.services-summary .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-summary h2 {
+  font-size: 2rem;
+  color: #0168B4;
+  margin-bottom: 20px;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: #f4f4f4;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  flex: 1 1 calc(33.33% - 20px);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  color: #0168B4;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.view-more {
+  margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .service-card {
+    flex: 1 1 100%;
+  }
+}
