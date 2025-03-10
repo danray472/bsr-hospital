@@ -610,3 +610,211 @@ footer {
     flex: 1 1 100%;
   }
 }
+
+.services-info{
+  padding: 10px;
+  color:rgba(70, 68, 68, 0.7);
+  font-family: 'Tahoma, Geneva, Verdana, sans-serif';
+}
+
+/******************************************
+ * ADDITIONAL FLOATING BUTTON & PANEL CSS *
+ ******************************************/
+ .floating-whatsapp a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  font-size: 30px;
+  text-decoration: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.floating-whatsapp a:hover {
+  background-color: #1ebe57;
+}
+
+.floating-question {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+}
+
+.floating-question button {
+  background-color: #1e1560;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.floating-question button:hover {
+  background-color: #014F88;
+}
+
+/* By default hide the icon; show text only on larger screens */
+.floating-question button .question-icon {
+  display: none;
+}
+
+.question-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 0;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+  transition: height 0.4s ease;
+  z-index: 9999;
+}
+
+.question-panel.open {
+  height: 400px; /* Enough to show the form on desktop */
+}
+
+.panel-content {
+  position: relative;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.close-panel {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #0168B4;
+}
+
+.close-panel:hover {
+  color: #014f87;
+}
+
+.panel-content h3 {
+  margin-bottom: 15px;
+  color: #0168B4;
+}
+
+.panel-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-content form label {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+}
+
+.panel-content form input,
+.panel-content form textarea {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.panel-content form button {
+  background-color: #0168B4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.panel-content form button:hover {
+  background-color: #014F88;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+  /* For the floating question button, hide the text and show the icon */
+  .floating-question button {
+    padding: 12px;
+    font-size: 24px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+  }
+  .floating-question button .question-text {
+    display: none;
+  }
+  .floating-question button .question-icon {
+    display: inline-block;
+  }
+  /* Make the pop-up panel larger on mobile for better visibility */
+  .question-panel {
+    width: 90%;
+    left: 5%;
+  }
+  .question-panel.open {
+    height: 80%;
+  }
+}
+
+.location-info {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.location-info .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.location-info h2 {
+  font-size: 2rem;
+  color: #0168B4;
+  margin-bottom: 20px;
+}
+
+/* Use column layout so that info always appears above the map */
+.map-and-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.location-info .info {
+  width: 100%;
+  font-size: 1rem;
+  color: #333;
+  text-align: center; /* Adjust to left if needed */
+}
+
+.location-info .map {
+  width: 100%;
+}
+
+.location-info .map iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 8px;
+}

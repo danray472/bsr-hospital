@@ -37,7 +37,7 @@
         <ul>
           <li><a href="appointment.html">Book Appointment</a></li>
           <li><a href="services.html">Our Services</a></li>
-          <li><a href="profiles.html">Our Stuff</a></li>
+          <li><a href="profiles.html">Our Staff</a></li>
           <li><a href="updates.html">News and Updates</a></li>
           <li><a href="about-us.html">About Us</a></li>
         </ul>
@@ -52,7 +52,7 @@
       <ul>
         <li><a href="appointment.html">Book Appointment</a></li>
         <li><a href="services.html">Our Services</a></li>
-        <li><a href="profiles.html">Our Stuff</a></li>
+        <li><a href="profiles.html">Our Staff</a></li>
         <li><a href="updates.html">News and Updates</a></li>
         <li><a href="about-us.html">About Us</a></li>
       </ul>
@@ -112,16 +112,20 @@
         
         
             <!-- Slideshow Images -->
-            <img src="assets/slide1.jpg" alt="Slide 1">
+            <img src="assets/slide1.jpeg" alt="Slide 1">
             <img src="assets/slide2.jpeg" alt="Slide 2">
             <img src="assets/slide3.jpeg" alt="Slide 3">
             <img src="assets/slide4.jpeg" alt="Slide 4">
+            <img src="assets/slide5.JPG" alt="Slide 5">
+           
         
             <!-- Text Overlays (One for Each Slide) -->
             <div class="slide-text">VISIT US<br>Ruiru, Kamakis, Eastern Bypass, Kiambu.</div>
             <div class="slide-text">Self Contained Ward<br></div>
-            <div class="slide-text">CONTACT US: +254 710 277 277 | +254 738 277 277 <br> EMAIL US: bsrnairobi@gmail.com</div>
-            <div class="slide-text">BSR Hospital</div>
+            <div class="slide-text">Physiotherapy Services</div>
+            <div class="slide-text">Welcome to BSR Hospital <br> CONTACT US: +254 710 277 277 | +254 738 277 277 <br> EMAIL US: bsrnairobi@gmail.com</div>
+            <div class="slide-text">24/7 Emergency Services</div>
+            
        
         
       
@@ -158,7 +162,7 @@
               <p>
                 Located in a serene environment of Kamakis, Ruiru, Eastern Bypass in Kiambu County, the facility is easily accessible by public and private transport along the key artery of Thika Superhighway.
               </p>
-              <a href="about us/about-us.html" class="btn">Read More</a>
+              <a href="about-us.html" class="btn">Read More</a>
             </div>
             <div class="summary-image">
               <img src="assets/about-sammary.jpeg" alt="About Us">
@@ -167,40 +171,183 @@
         </div>
       </section>
       
-      <section class="services-summary">
+      <section class="services-slider">
         <div class="container">
-          <h2>Our Services</h2>
-          <div class="services-grid">
-            <!-- Service Card 1 -->
-            <div class="service-card">
-              <img src="assets/rehab-1536x491.jpg" alt="Physiotherapy Services">
-              <div class="card-content">
-                <h3>Physiotherapy</h3>
-                <p>Functional mobility training and pain management to restore strength and flexibility.</p>
-              </div>
+            <h2>Our Services</h2>
+            <p class="services-info">We provide a host of outpatient, inpatient and specialist clinic services that can wholly accommodate your medical need</p>
+            <div class="slider-wrapper">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <div class="slider">
+                    <div class="slide">
+                        <img src="assets/rehab-1536x491.jpg" alt="Physiotherapy">
+                        <div class="card-content">
+                            <h3>Physiotherapy</h3>
+                            <p>Functional mobility training and pain management to restore strength and flexibility.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/rehab2-1536x491.jpg" alt="Occupational Therapy">
+                        <div class="card-content">
+                            <h3>Occupational Therapy</h3>
+                            <p>Re-training daily living activities and improving coordination for enhanced independence.</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/rehab3-1536x491.jpg" alt="Inpatient Services">
+                        <div class="card-content">
+                            <h3>Inpatient Services</h3>
+                            <p>Comprehensive care including surgery, post-operative recovery, and rehabilitation under one roof.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
             </div>
-            <!-- Service Card 2 -->
-            <div class="service-card">
-              <img src="assets/rehab2-1536x491.jpg" alt="Occupational Therapy">
-              <div class="card-content">
-                <h3>Occupational Therapy</h3>
-                <p>Re-training daily living activities and improving coordination for enhanced independence.</p>
-              </div>
-            </div>
-            <!-- Service Card 3 -->
-            <div class="service-card">
-              <img src="assets/rehab3-1536x491 (1).jpg" alt="Inpatient Services">
-              <div class="card-content">
-                <h3>Inpatient Services</h3>
-                <p>Comprehensive care including surgery, post-operative recovery, and rehabilitation under one roof.</p>
-              </div>
-            </div>
-          </div>
-          <div class="view-more">
+        </div>
+        <div class="view-more">
             <a href="services.html" class="btn">View More Services</a>
+        </div>
+    </section>
+    
+    <style>
+        .services-slider {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+    
+        .services-slider h2 {
+            color: #0168B4; /* Matches primary button color */
+        }
+    
+        .slider-wrapper {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+            overflow: hidden;
+        }
+    
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+    
+        .slide {
+            min-width: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+    
+        .slide img {
+            width: 100%;
+        }
+    
+        .card-content {
+            padding: 15px;
+        }
+    
+        .card-content h3 {
+            color: #0168B4;
+        }
+    
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 20px;
+            border-radius: 50%;
+            z-index: 2;
+        }
+    
+        .prev {
+            left: 10px;
+            visibility: visible; /* Ensures it's always visible */
+        }
+    
+        .next {
+            right: 10px;
+        }
+    
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    
+        .view-more {
+            text-align: center;
+            margin-top: 20px;
+        }
+    
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #0168B4; /* Matches primary color */
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+    
+        .btn:hover {
+            background-color: #014F88; /* Darker shade for hover effect */
+        }
+    </style>
+    
+    <script>
+        let slideIndex = 0;
+        let autoSlideInterval;
+    
+        function moveSlide(step) {
+            clearInterval(autoSlideInterval); // Reset auto-slide timer
+            slideIndex += step;
+            showSlides();
+            startAutoSlide();
+        }
+    
+        function showSlides() {
+            let slides = document.querySelectorAll(".slide");
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            document.querySelector(".slider").style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+    
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                slideIndex++;
+                showSlides();
+            }, 5000); // Auto-slide every 5 seconds
+        }
+    
+        document.addEventListener("DOMContentLoaded", startAutoSlide);
+    </script>
+    
+    <section class="location-info">
+      <div class="container">
+        <h2>Our Location</h2>
+        <div class="map-and-info">
+          <div class="info">
+            <p><strong>Address:</strong> Kamakis, Eastern Bypass, Kiambu County, Kenya</p>
+            <p><strong>Visiting Hours:</strong> Monday - Friday, 8:00 AM - 5:00 PM</p>
+            <p><strong>Visit us as at:</strong> BSR Hospital Nairobi</p>
+          </div>
+          <div class="map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.700045979269!2d36.967211!3d-1.1684753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1722597a2099:0x8a56c3d4a5988b00!2sBSR%20Hospital%20Nairobi!5e0!3m2!1sen!2sus!4v169xxxxxx" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+    
+       
       
       
   </main>
@@ -317,6 +464,62 @@ document.getElementById("backToTop").addEventListener("click", function () {
 </script>
 
 </footer>
+
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<div class="floating-whatsapp">
+  <a href="https://wa.me/254710277277" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div>
+
+
+<!-- FLOATING 'HAVE A QUESTION' BUTTON -->
+<!-- FLOATING 'HAVE A QUESTION' BUTTON -->
+<div class="floating-question" id="questionBtn">
+  <button>
+    <span class="question-text">Have a question?</span>
+    <i class="fa fa-question-circle question-icon"></i>
+  </button>
+</div>
+
+
+<!-- POP-UP QUESTION PANEL -->
+<div class="question-panel" id="questionPanel">
+  <div class="panel-content">
+    <span class="close-panel" id="closePanel">&times;</span>
+    <h3>Ask a Question</h3>
+    <form>
+      <label for="q-name">Name</label>
+      <input type="text" id="q-name" name="name" placeholder="Your Name" />
+
+      <label for="q-email">Email</label>
+      <input type="email" id="q-email" name="email" placeholder="Your Email" />
+
+      <label for="q-phone">Phone Number</label>
+      <input type="tel" id="q-phone" name="phone" placeholder="Your Phone Number" />
+
+      <label for="q-message">Message</label>
+      <textarea id="q-message" name="message" placeholder="Your Message"></textarea>
+
+      <!-- No real submission action yet -->
+      <button type="button">Send</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Show the question panel
+  document.getElementById('questionBtn').addEventListener('click', function() {
+    document.getElementById('questionPanel').classList.add('open');
+  });
+
+  // Close the question panel
+  document.getElementById('closePanel').addEventListener('click', function() {
+    document.getElementById('questionPanel').classList.remove('open');
+  });
+</script>
+
 
 
   <!-- Mobile Menu Toggle Script -->

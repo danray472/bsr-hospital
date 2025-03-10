@@ -120,6 +120,13 @@ h1, h2 {
     text-align: left;
 }
 
+ol {
+    list-style-type: decimal; /* Ensures numbers appear */
+    margin-left: 20px; /* Adds indentation */
+    padding-left: 20px;
+  }
+  
+
 /* Apply a fixed width on larger screens (desktop) */
 @media (min-width: 1024px) { /* Adjust breakpoint if needed */
     .modal-content {
