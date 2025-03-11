@@ -342,5 +342,58 @@ document.getElementById("backToTop").addEventListener("click", function () {
 
 </footer>
 
+<!-- FLOATING WHATSAPP BUTTON -->
+<div class="floating-whatsapp">
+  <a href="https://wa.me/254710277277" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div>
+
+
+<!-- FLOATING 'HAVE A QUESTION' BUTTON -->
+<!-- FLOATING 'HAVE A QUESTION' BUTTON -->
+<div class="floating-question" id="questionBtn">
+  <button>
+    <span class="question-text">Have a question?</span>
+    <i class="fa fa-question-circle question-icon"></i>
+  </button>
+</div>
+
+
+<!-- POP-UP QUESTION PANEL -->
+<div class="question-panel" id="questionPanel">
+  <div class="panel-content">
+    <span class="close-panel" id="closePanel">&times;</span>
+    <h3>Ask a Question</h3>
+    <form>
+      <label for="q-name">Name</label>
+      <input type="text" id="q-name" name="name" placeholder="Your Name" />
+
+      <label for="q-email">Email</label>
+      <input type="email" id="q-email" name="email" placeholder="Your Email" />
+
+      <label for="q-phone">Phone Number</label>
+      <input type="tel" id="q-phone" name="phone" placeholder="Your Phone Number" />
+
+      <label for="q-message">Message</label>
+      <textarea id="q-message" name="message" placeholder="Your Message"></textarea>
+
+      <!-- No real submission action yet -->
+      <button type="button">Send</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Show the question panel
+  document.getElementById('questionBtn').addEventListener('click', function() {
+    document.getElementById('questionPanel').classList.add('open');
+  });
+
+  // Close the question panel
+  document.getElementById('closePanel').addEventListener('click', function() {
+    document.getElementById('questionPanel').classList.remove('open');
+  });
+</script>
 </body>
 </html>

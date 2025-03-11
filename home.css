@@ -259,7 +259,6 @@ footer {
   overflow: hidden;
   position: relative;
   padding: 10px 0;
- 
 }
 
 /* Our Partners Section */
@@ -342,15 +341,11 @@ footer {
 }
 
 
-
-
-
-
 /* Footer Bottom */
 .footer-bottom {
   text-align: center;
   margin-top: 10px;
-  color: #fff;
+  color: #2f2e2e;
 }
 /* Footer About & Location */
 .footer-about, .footer-location {
