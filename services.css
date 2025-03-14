@@ -33,7 +33,10 @@ h1, h2 {
 .card img {
     width: 100%;
     border-radius: 8px;
-    height: 350px;
+    height: 300px;
+}
+.card-physio img {
+    height: 200px;
 }
 .card h3 {
     margin: 10px 0;
