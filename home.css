@@ -429,7 +429,7 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: white;
+  color: rgb(249, 241, 8);
   font-size: 1.5rem;
   font-weight: bold;
   background: rgba(0, 0, 0, 0.6);
@@ -514,11 +514,13 @@ footer {
 .summary-image {
   flex: 1;
   text-align: center;
+  
 }
 
 .summary-image img {
   max-width: 100%;
   border-radius: 10px;
+  height: 400px;
 }
 
 @media (max-width: 768px) {

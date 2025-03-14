@@ -109,47 +109,80 @@
   <main>
     <!-- Add your page content here -->
     <section class="hero">
-        
-        
-            <!-- Slideshow Images -->
-            <img src="assets/slide1.jpeg" alt="Slide 1">
-            <img src="assets/slide2.jpeg" alt="Slide 2">
-            <img src="assets/slide3.jpeg" alt="Slide 3">
-            <img src="assets/slide4.jpeg" alt="Slide 4">
-            <img src="assets/slide5.JPG" alt="Slide 5">
-           
-        
-            <!-- Text Overlays (One for Each Slide) -->
-            <div class="slide-text">VISIT US<br>Ruiru, Kamakis, Eastern Bypass, Kiambu.</div>
-            <div class="slide-text">Semi-self Contained Wards<br></div>
-            <div class="slide-text">Physiotherapy Services</div>
-            <div class="slide-text">Welcome to BSR Hospital <br> CONTACT US: +254 710 277 277 | +254 738 277 277 <br> EMAIL US: bsrnairobi@gmail.com</div>
-            <div class="slide-text">24/7 Emergency Services</div>
-            
-       
-        
+      <!-- Slideshow Images -->
+      <img src="assets/slide1.jpeg" alt="Slide 1">
+      <img src="assets/slide6-min.JPG" alt="Slide 6">
+      <img src="assets/Stroke Treatment.jpg" alt="stroke">
+      <img src="assets/inpatient.JPG" alt="Slide 2">
+      <img src="assets/phamarcy.JPG" alt="Slide 7">
+      <img src="assets/slide4.jpeg" alt="Slide 4">
+      <img src="assets/slide5.JPG" alt="Slide 5">
       
+      <!-- Text Overlays (One for Each Slide) -->
+      <div class="slide-text">Welcome to BSR Hospital CONTACT US: +254 710 277 277 | +254 738 277 277 EMAIL US: bsrnairobi@gmail.com</div>
+      <div class="slide-text">Specialized Services Neurosurgery, Spine surgery, General surgery</div>
+      <div class="slide-text">Stroke Management Services</div>
+      <div class="slide-text">Inpatient Services</div>
+      <div class="slide-text">Phamarcy Services</div>
+      <div class="slide-text">VISIT US Ruiru, Kamakis, Eastern Bypass, Kiambu.</div>
+      <div class="slide-text">24/7 Emergency Services</div>
+      
+      <script>
+        // Get all slides and text elements
+        let slides = document.querySelectorAll(".hero img");
+        let texts = document.querySelectorAll(".slide-text");
+        let currentSlide = 0;
         
-            <script>
-                let slides = document.querySelectorAll(".hero img");
-                let texts = document.querySelectorAll(".slide-text");
-                let currentSlide = 0;
-              
-                function changeSlide() {
-                  slides[currentSlide].style.opacity = 0; // Hide current slide
-                  texts[currentSlide].style.opacity = 0;  // Hide current text
-              
-                  currentSlide = (currentSlide + 1) % slides.length; // Move to next slide
-              
-                  slides[currentSlide].style.opacity = 1; // Show next slide
-                  texts[currentSlide].style.opacity = 1;  // Show corresponding text
-                }
-              
-                setInterval(changeSlide, 5000); // Change slide every 4 seconds
-              </script>
-              
+        // Store original caption texts (using textContent to strip out HTML if necessary)
+        let captions = [];
+        texts.forEach(text => {
+          captions.push(text.textContent);
+        });
+        
+        // Set all slides and texts initial opacity to 0 except the first one.
+        slides.forEach((slide, index) => {
+          slide.style.opacity = index === 0 ? 1 : 0;
+          texts[index].style.opacity = index === 0 ? 1 : 0;
+          texts[index].textContent = ""; // clear text so we can animate it
+        });
+        
+        // Typewriter effect function
+        function typeWriter(textElement, text, delay = 30) {
+          let i = 0;
+          textElement.textContent = "";
+          let timer = setInterval(function() {
+            textElement.textContent += text.charAt(i);
+            i++;
+            if (i >= text.length) {
+              clearInterval(timer);
+            }
+          }, delay);
+        }
+        
+        // Animate the first caption immediately
+        typeWriter(texts[0], captions[0]);
+        
+        // Function to change slides and animate caption text
+        function changeSlide() {
+          // Hide current slide and caption
+          slides[currentSlide].style.opacity = 0;
+          texts[currentSlide].style.opacity = 0;
           
-      </section>
+          // Move to next slide
+          currentSlide = (currentSlide + 1) % slides.length;
+          
+          // Show the new slide and caption container
+          slides[currentSlide].style.opacity = 1;
+          texts[currentSlide].style.opacity = 1;
+          
+          // Animate the caption for the new slide using the typewriter effect
+          typeWriter(texts[currentSlide], captions[currentSlide]);
+        }
+        
+        setInterval(changeSlide, 6000); // Change slide every 5 seconds
+      </script>
+    </section>
+    
 
       <section class="about-us-summary">
         <div class="container">
@@ -157,7 +190,7 @@
             <div class="summary-text">
               <h2>About Us</h2>
               <p>
-                BSR Hospital is a provider of acute and specialized Neurosurgery care and rehabilitation services.
+                The Brain Spine and Rehabilitation Hospital (BSR) is a specialized surgical hospital offering advanced care for brain, spine, orthopedic, trauma, and general surgery. We provide outpatient, inpatient, critical care, accident & emergency, laboratory, pharmacy, and homecare services. Our 40-bed facility includes a 7-bed ICU/HDU, modern surgical equipment, and an ACLS ambulance with CCTV monitoring. We are expanding our radiology services, including a CT scanner, to enhance stroke management. Our neuro-rehabilitation unit offers expert care for spinal injuries, stroke, and neurological conditions, with home-based therapy services.
               </p>
               <p>
                 Located in a serene environment of Kamakis, Ruiru, Eastern Bypass in Kiambu County, the facility is easily accessible by public and private transport along the key artery of Thika Superhighway.
@@ -165,7 +198,7 @@
               <a href="about-us.html" class="btn">Read More</a>
             </div>
             <div class="summary-image">
-              <img src="assets/about-sammary.jpeg" alt="About Us">
+              <img src="assets/BSR (17)-min.JPG" alt="About Us">
             </div>
           </div>
         </div>
@@ -174,31 +207,39 @@
       <section class="services-slider">
         <div class="container">
             <h2>Our Services</h2>
-            <p class="services-info">We provide a host of outpatient, inpatient and specialist clinic services that can wholly accommodate your medical need</p>
+            <p class="services-info">We provide a host of outpatient, inpatient and specialist services that can wholly accommodate your medical need</p>
             <div class="slider-wrapper">
                 <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
                 <div class="slider">
+                  <div class="slide">
+                    <img src="assets/slider.jpeg" alt="Inpatient Services">
+                    <div class="card-content">
+                        <h3>Neurosurgery Services</h3>
+                        <p>We provide comprehensive neurosurgery services, specializing in the diagnosis, treatment, and surgical management of brain, spinal, and nerve disorders. Our expert team uses advanced technology to deliver high-quality, patient-centered care.</p>
+                    </div>
+                </div>
+                  <div class="slide">
+                    <img src="assets/inpatient.JPG" alt="Inpatient Services">
+                    <div class="card-content">
+                        <h3>Inpatient Services</h3>
+                        <p>Comprehensive care including surgery, post-operative recovery, and rehabilitation under one roof.</p>
+                    </div>
+                </div>
                     <div class="slide">
-                        <img src="assets/rehab-1536x491.jpg" alt="Physiotherapy">
+                        <img src="assets/spd.jpeg" alt="Physiotherapy">
                         <div class="card-content">
-                            <h3>Physiotherapy</h3>
-                            <p>Functional mobility training and pain management to restore strength and flexibility.</p>
+                            <h3>Time is Brain</h3>
+                            <p>Expert Stroke Management & Rehabilitation Advanced Care for Faster Recovery</p>
                         </div>
                     </div>
                     <div class="slide">
                         <img src="assets/rehab2-1536x491.jpg" alt="Occupational Therapy">
                         <div class="card-content">
-                            <h3>Occupational Therapy</h3>
+                            <h3>Physiotherapy</h3>
                             <p>Re-training daily living activities and improving coordination for enhanced independence.</p>
                         </div>
                     </div>
-                    <div class="slide">
-                        <img src="assets/rehab3-1536x491.jpg" alt="Inpatient Services">
-                        <div class="card-content">
-                            <h3>Inpatient Services</h3>
-                            <p>Comprehensive care including surgery, post-operative recovery, and rehabilitation under one roof.</p>
-                        </div>
-                    </div>
+                
                 </div>
                 <button class="next" onclick="moveSlide(1)">&#10095;</button>
             </div>
@@ -239,8 +280,23 @@
         }
     
         .slide img {
-            width: 100%;
-        }
+    width: 100%;
+    height: 500px; /* Default height for larger screens */
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .slide img {
+        height: 300px; /* Reduced height for mobile screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .slide img {
+        height: 250px; /* Even smaller height for very small screens */
+    }
+}
+
     
         .card-content {
             padding: 15px;

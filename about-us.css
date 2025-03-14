@@ -74,16 +74,19 @@
     display: flex;
     gap: 30px;
     align-items: center;
+    flex-direction: column;
   }
   
   .story-img img {
     width: 100%;
     border-radius: 8px;
-    display: block;
+    display: flex;
   }
   
   .story-text {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
   }
   
   .story-text h2 {
