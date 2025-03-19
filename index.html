@@ -18,12 +18,13 @@
   <header>
     <!-- Top Social Links -->
     <div class="top-social">
-        <ul>
-            <li><a href="http://facebook.com/BSRHospitalKenya" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="http://twitter.com/BsrHospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="http://instagram.com/bsr_hospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="http://youtube.com/watch?v=_5xBS86dPyI" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
-        </ul>
+      <ul>
+        <li><a href="http://facebook.com/BSRHospitalKenya" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="http://twitter.com/BsrHospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="http://instagram.com/bsr_hospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.linkedin.com/company/brain-spine-rehabilitation-hospital-bsr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
+    </ul>
+    
         
           
     </div>
@@ -115,7 +116,7 @@
       <img src="assets/Stroke Treatment.jpg" alt="stroke">
       <img src="assets/inpatient.JPG" alt="Slide 2">
       <img src="assets/phamarcy.JPG" alt="Slide 7">
-      <img src="assets/slide4.jpeg" alt="Slide 4">
+     <!-- <img src="assets/slide4.jpeg" alt="Slide 4"> -->
       <img src="assets/slide5.JPG" alt="Slide 5">
       
       <!-- Text Overlays (One for Each Slide) -->
@@ -220,8 +221,8 @@
                 </div>
                   
                     <div class="slide">
-                        <img src="assets/Stroke Treatment.jpg" alt="Physiotherapy">
-                        <div class="card-content">
+                        <img class="stroke" src="assets/Stroke Treatment.jpg" alt="Physiotherapy">
+                        <div class="card-content ">
                             <h3>Stroke Management Services</h3>
                             <p>Expert Stroke Management & Rehabilitation involves advanced medical interventions, personalized therapy, and cutting-edge technology to help stroke patients regain mobility, speech, and cognitive functions</p>
                         </div>
@@ -286,6 +287,8 @@
     object-fit: cover;
 }
 
+
+
 @media (max-width: 768px) {
     .slide img {
         height: 300px; /* Reduced height for mobile screens */
@@ -297,6 +300,14 @@
         height: 250px; /* Even smaller height for very small screens */
     }
 }
+@media (min-width: 1024px) { /* Targets larger screens like laptops and desktops */
+    .stroke{
+        width: auto;
+        height: 740px !important; /* Increase height to show full text */
+        object-fit: contain; /* Ensures the full image is visible */
+    }
+}
+
 
     
         .card-content {
@@ -450,7 +461,7 @@
         <li><a href="http://facebook.com/BSRHospitalKenya" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
         <li><a href="http://twitter.com/BsrHospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
         <li><a href="http://instagram.com/bsr_hospital" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="http://youtube.com/watch?v=_5xBS86dPyI" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a></li>
+        <li><a href="https://www.linkedin.com/company/brain-spine-rehabilitation-hospital-bsr/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
       </ul>
     </div>
   </div>
